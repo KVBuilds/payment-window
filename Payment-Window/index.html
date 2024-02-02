@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <p class="eyebrow-text">Make Payments Easier</p>
+                <h1>TruePayment: One Payment at a Time</h1>
+                <p>A secure payment system to trust. Get started by first completing the information below.</p>
+            </div>
+        </header>
+
+        <main>
+            <!-- Registration Form -->
+              <div class="form-container active" id="registrationForm">
+                <form action="/submit-info" method="post">
+                    <input class="input-field" type="text" name="first_name" id="firstName" placeholder="First Name" required>
+                    <input class="input-field" type="text" name="last_name" id="lastName" placeholder="Last Name" required>
+                    <input class="input-field" type="email" name="email" id="email" placeholder="Email Address" required>
+                    <button class="button" id="proceedToPayment">Proceed to Payment</button>
+                </form>
+            </div>
+
+            <!-- Payment Form (Hidden by default) -->
+            <div class="form-container" id="paymentForm" style="display: none;">
+                <form action="/submit-payment" method="post">
+                    <input class="input-field" type="text" name="card_number" placeholder="Credit Card Number" required>
+                    <input class="input-field" type="text" name="expiration_date" placeholder="Expiration Date" required>
+                    <input class="input-field" type="text" name="cvv" placeholder="CVV" required>
+                    <button class="button" id="confirmPayment">Confirm Payment</button>
+                </form>
+            </div>
+
+            <!-- Thank You Blurb (Hidden by default) -->
+            <div class="thank-you-container" id="thankYouBlurb" style="display: none;">
+                <header>
+                    <div class="header-content">
+                        <p class="eyebrow-text">Transaction Successful</p>
+                        <h1>Thank You for Using TruePayment!</h1>
+                        <p>Your payment has been received and processed. An email receipt has been sent to your registered email address.</p>
+                    </div>
+                </header>
+                <button class="button" id="returnHome">Return to Homepage</button>
+            </div>
+
+        </main>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
